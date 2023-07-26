@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+
+:root{
+    /* neutral colors */
+    --clr-neutral-pale-blue: hsl(243, 100%, 93%);
+    --clr-neutral-grayish-blue: hsl(229, 7%, 55%);
+    --clr-neutral-dark-blue: hsl(228, 56%, 26%);
+    --clr-neutral-very-dark-blue: hsl(229, 57%, 11%);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: var(--clr-neutral-very-dark-blue);
+    background-image: url(images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+}
+
+
+main{
+    width: min(60%, 1440px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.container > .col1{
+    flex: 1 1 40%;
+    min-width: 35ch;
+}
+
+.container > .col2{
+    flex: 1 1 60%;
+    min-width: 35ch;
+}
+
+
+/* col1 styles */
+
+.col1{
+    
+    background: var(--clr-neutral-dark-blue);
+    border-radius: 8px;
+    border-top-right-radius: 100px;
+}
+
+.fylo, .fylo-icons{
+    margin: 2rem;
+} 
+
+.fylo-icons i{
+    background: var(--clr-neutral-very-dark-blue);
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-right: 0.5rem;
+    color: var(--clr-neutral-pale-blue);
+}
+
+
+/* col2 styles */
+
+.col2{
+    width: 100%;
+    height: 150px;
+    background: var(--clr-neutral-dark-blue);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+}
+
+.col2 h2{
+    font-size: 14px;
+    font-weight: 400;
+    color: hsl(0, 0%, 100%);
+}
+
+.col2 h2 span{
+    font-weight: 700;
+}
+
+
+/* progress bar */
+
+.fylo-progress{
+    width: 100%;
+    height: 15px;
+    border-radius: 20px;
+    background: var(--clr-neutral-very-dark-blue);
+    margin: 1rem 0 1rem 0;
+    position: relative;
+}
+
+
+.fylo-progress .progress::before{
+    content: '';
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    z-index: 2;
+}
+
+.fylo-progress .progress{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 50%;
+    left: calc(80% - 15px);
+    z-index: 3;
+    transform: translateY(-50%);
+    background: hsl(0, 0%, 100%);
+    /* position: absolute; */
+}
+
+
+/* notation styles */
+
+.notation{
+    display: flex;
+    align-items: center;
+    background: hsl(0, 0%, 100%);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--clr-neutral-grayish-blue);
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    left: 77%;
+}
+
+.notation span{
+    font-size: 2.5rem;
+    color: var(--clr-neutral-very-dark-blue);
+    margin-right: 5px;
+}
+
+
+.notation::after{
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid hsl(0, 0%, 100%);
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    top: 90%;
+    right: 0%;
+}
+
+.storage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.storage span{
+    font-size: 14px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+}
+
+
+
+
+
+/* mediaquerry */
+
+@media screen and (max-width: 768px) {
+    
+    body{
+        background-image: url(images/bg-mobile.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    main{
+        width: min(90%, 375px);
+        margin-inline: auto;
+    }
+    
+    .container{
+        display: block;
+        width: 100%;
+    }
+
+    .container .col1{
+        min-width: auto;
+    }
+
+    .container .col2{
+        min-width: auto;
+    }
+
+    .col1{
+        padding: 0.1rem;
+    }
+
+    .notation{
+        display: block;
+        top: 95%;
+        left: 20%;
+    }
+
+    .notation::after{
+        display: none;
+    }
+
+    .attribution{
+        position: absolute;
+        top: 120%;
+        left: 12%;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; margin-top: 3rem;}
+.attribution a { color: hsl(228, 45%, 44%); }
